@@ -1,0 +1,93 @@
+:root {
+  --bg: #15110d;
+  --panel: #211a13;
+  --edge: #4a3a26;
+  --text: #e8dcc4;
+  --muted: #a8977a;
+  --gold: #d9a441;
+  --blood: #a3262a;
+  --ok: #6fae4f;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: var(--gold); }
+
+header {
+  border-bottom: 2px solid var(--edge);
+  background: linear-gradient(#2a1f15, var(--bg));
+}
+
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+
+.brand {
+  display: block;
+  padding: 1.5rem 0 0.5rem;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: var(--blood);
+}
+.brand span { color: var(--gold); }
+
+nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding-bottom: 0.9rem; }
+nav a { text-decoration: none; color: var(--muted); }
+nav a:hover, nav a[aria-current="page"] { color: var(--gold); }
+
+main.wrap { padding-top: 2rem; padding-bottom: 3rem; }
+
+h1, h2, h3 { color: var(--gold); line-height: 1.25; }
+h1 { font-size: 1.9rem; margin-top: 0; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  padding: 1.1rem 1.3rem;
+  margin: 1.25rem 0;
+}
+
+.address {
+  font-family: ui-monospace, "DejaVu Sans Mono", monospace;
+  font-size: 1.3rem;
+  color: var(--text);
+  background: #0e0b08;
+  border: 1px solid var(--edge);
+  border-radius: 4px;
+  padding: 0.35rem 0.7rem;
+  display: inline-block;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 0.75rem; height: 0.75rem;
+  border-radius: 50%;
+  background: var(--muted);
+  margin-right: 0.4rem;
+}
+.status-dot.up { background: var(--ok); }
+.status-dot.down { background: var(--blood); }
+
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.grid .panel { margin: 0; }
+.grid h3 { margin-top: 0; }
+
+ol li, ul li { margin: 0.3rem 0; }
+
+.muted { color: var(--muted); }
+
+footer {
+  border-top: 1px solid var(--edge);
+  padding: 1.25rem 0 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
