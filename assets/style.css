@@ -58,15 +58,12 @@ h1 { font-size: 1.9rem; margin-top: 0; }
 }
 
 .address {
-  font-family: ui-monospace, "DejaVu Sans Mono", monospace;
-  font-size: 1.3rem;
-  color: var(--text);
-  background: #0e0b08;
-  border: 1px solid var(--edge);
-  border-radius: 4px;
-  padding: 0.35rem 0.7rem;
-  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  color: var(--gold);
 }
+li .address { font-size: 1.1rem; }
 
 .status-dot {
   display: inline-block;
