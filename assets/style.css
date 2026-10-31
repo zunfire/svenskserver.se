@@ -42,6 +42,7 @@ header {
 nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding-bottom: 0.9rem; }
 nav a { text-decoration: none; color: var(--muted); }
 nav a:hover, nav a[aria-current="page"] { color: var(--gold); }
+nav a.lang { margin-left: auto; border: 1px solid var(--edge); padding: 0 0.5rem; border-radius: 3px; }
 
 main.wrap { padding-top: 2rem; padding-bottom: 3rem; }
 

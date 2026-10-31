@@ -1,5 +1,6 @@
 // Live-status via api.mcsrvstat.us (frågas från besökarens webbläsare).
 (function () {
+  var en = document.documentElement.lang === "en";
   var box = document.getElementById("status");
   if (!box) return;
   var dot = box.querySelector(".status-dot");
@@ -10,18 +11,20 @@
     .then(function (s) {
       if (!s.online) {
         dot.className = "status-dot down";
-        text.textContent = "Servern är nere just nu.";
+        text.textContent = en ? "The server is down right now." : "Servern är nere just nu.";
         return;
       }
       dot.className = "status-dot up";
       var p = s.players || {};
-      var line = "Servern är uppe · " + (p.online || 0) + " av " + (p.max || 12) + " spelare online";
+      var line = en
+        ? "The server is up · " + (p.online || 0) + " of " + (p.max || 12) + " players online"
+        : "Servern är uppe · " + (p.online || 0) + " av " + (p.max || 12) + " spelare online";
       if (p.list && p.list.length) {
         line += ": " + p.list.map(function (x) { return x.name; }).join(", ");
       }
       text.textContent = line;
     })
     .catch(function () {
-      text.textContent = "Kunde inte hämta status.";
+      text.textContent = en ? "Could not fetch status." : "Kunde inte hämta status.";
     });
 })();
